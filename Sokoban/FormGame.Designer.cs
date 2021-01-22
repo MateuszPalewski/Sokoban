@@ -55,7 +55,7 @@
             this.ClientSize = new System.Drawing.Size(784, 761);
             this.Controls.Add(this.tableLayoutPanelGame);
             this.Name = "FormGame";
-            this.Text = "Form1";
+            this.Text = "Sokoban";
             this.ResumeLayout(false);
             this.PerformLayout();
 
