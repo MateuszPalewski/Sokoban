@@ -33,22 +33,22 @@
             this.buttonStartGame = new System.Windows.Forms.Button();
             this.radioButtonSQL = new System.Windows.Forms.RadioButton();
             this.buttonSelectFile = new System.Windows.Forms.Button();
-            this.labelTest = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBoxSelect
             // 
             this.comboBoxSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSelect.FormattingEnabled = true;
-            this.comboBoxSelect.Location = new System.Drawing.Point(285, 201);
+            this.comboBoxSelect.Location = new System.Drawing.Point(208, 202);
             this.comboBoxSelect.Name = "comboBoxSelect";
-            this.comboBoxSelect.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSelect.Size = new System.Drawing.Size(258, 21);
             this.comboBoxSelect.TabIndex = 0;
             // 
             // radioButtonFile
             // 
             this.radioButtonFile.AutoSize = true;
-            this.radioButtonFile.Location = new System.Drawing.Point(174, 247);
+            this.radioButtonFile.Location = new System.Drawing.Point(52, 245);
             this.radioButtonFile.Name = "radioButtonFile";
             this.radioButtonFile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioButtonFile.Size = new System.Drawing.Size(96, 17);
@@ -60,7 +60,7 @@
             // buttonStartGame
             // 
             this.buttonStartGame.BackColor = System.Drawing.Color.Crimson;
-            this.buttonStartGame.Location = new System.Drawing.Point(98, 347);
+            this.buttonStartGame.Location = new System.Drawing.Point(62, 320);
             this.buttonStartGame.Name = "buttonStartGame";
             this.buttonStartGame.Size = new System.Drawing.Size(403, 72);
             this.buttonStartGame.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             this.radioButtonSQL.AutoSize = true;
             this.radioButtonSQL.Checked = true;
-            this.radioButtonSQL.Location = new System.Drawing.Point(184, 205);
+            this.radioButtonSQL.Location = new System.Drawing.Point(62, 203);
             this.radioButtonSQL.Name = "radioButtonSQL";
             this.radioButtonSQL.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioButtonSQL.Size = new System.Drawing.Size(87, 17);
@@ -84,38 +84,42 @@
             // buttonSelectFile
             // 
             this.buttonSelectFile.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.buttonSelectFile.Location = new System.Drawing.Point(285, 244);
+            this.buttonSelectFile.Location = new System.Drawing.Point(208, 245);
             this.buttonSelectFile.Name = "buttonSelectFile";
-            this.buttonSelectFile.Size = new System.Drawing.Size(120, 23);
+            this.buttonSelectFile.Size = new System.Drawing.Size(257, 23);
             this.buttonSelectFile.TabIndex = 5;
             this.buttonSelectFile.Text = "Wybierz plik";
             this.buttonSelectFile.UseVisualStyleBackColor = false;
             this.buttonSelectFile.Click += new System.EventHandler(this.buttonSelectFile_Click);
             // 
-            // labelTest
+            // label1
             // 
-            this.labelTest.AutoSize = true;
-            this.labelTest.Location = new System.Drawing.Point(246, 72);
-            this.labelTest.Name = "labelTest";
-            this.labelTest.Size = new System.Drawing.Size(35, 13);
-            this.labelTest.TabIndex = 6;
-            this.labelTest.Text = "label1";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(241, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
             // 
             // FormMenuStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(617, 466);
-            this.Controls.Add(this.labelTest);
+            this.ClientSize = new System.Drawing.Size(514, 404);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSelectFile);
             this.Controls.Add(this.radioButtonSQL);
             this.Controls.Add(this.buttonStartGame);
             this.Controls.Add(this.radioButtonFile);
             this.Controls.Add(this.comboBoxSelect);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMenuStart";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormStart";
+            this.Text = "Sokoban";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +132,6 @@
         private System.Windows.Forms.Button buttonStartGame;
         private System.Windows.Forms.RadioButton radioButtonSQL;
         private System.Windows.Forms.Button buttonSelectFile;
-        private System.Windows.Forms.Label labelTest;
+        private System.Windows.Forms.Label label1;
     }
 }

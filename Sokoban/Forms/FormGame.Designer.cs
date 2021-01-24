@@ -56,7 +56,7 @@
             this.Controls.Add(this.tableLayoutPanelGame);
             this.Name = "FormGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Sokoban";
+            this.Text = "Gra";
             this.ResumeLayout(false);
             this.PerformLayout();
 

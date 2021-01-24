@@ -17,25 +17,18 @@ namespace Sokoban
             List<string> result = new List<string>();
             try
             {
-                //łącze sie do bazy danych lokalnej za pomocą Connect stringa.
                 sqlConnection.Open();
-                //deklaruje trzy komendy sql do wykonania poleceń
                 SqlCommand sqlcommand = new SqlCommand();
-                //definiuje typ komend jako tekst oraz przypisuje im połaczenie na którym mają wykonać komendę.
                 sqlcommand.CommandType = CommandType.Text;
                 sqlcommand.Connection = sqlConnection;
                 
-                //definiuje treść komendy w języku SQL
                 sqlcommand.CommandText = "SELECT DISTINCT(mapID) FROM [dbo].[Table] ";
 
                 using (SqlDataReader reader = sqlcommand.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-
                         result.Add((reader.GetInt32(0).ToString()));
-
-
                     }
                 }
                 sqlConnection.Close();
@@ -53,15 +46,11 @@ namespace Sokoban
             List<string> result = new List<string>();
             try
             {
-                //łącze sie do bazy danych lokalnej za pomocą Connect stringa.
                 sqlConnection.Open();
-                //deklaruje trzy komendy sql do wykonania poleceń
                 SqlCommand sqlcommand = new SqlCommand();
-                //definiuje typ komend jako tekst oraz przypisuje im połaczenie na którym mają wykonać komendę.
                 sqlcommand.CommandType = CommandType.Text;
                 sqlcommand.Connection = sqlConnection;
 
-                //definiuje treść komendy w języku SQL
                 sqlcommand.CommandText = $"SELECT value FROM [dbo].[Table] WHERE mapID={mapID}";
 
                 using (SqlDataReader reader = sqlcommand.ExecuteReader())

@@ -25,7 +25,7 @@ namespace Sokoban
                 playerOnTitle = value;
                 if (!playerOnTitle) playerInHole=false;
                 if (playerOnTitle && titleTypeEnum == TitleTypeEnum.Hole) playerInHole = true;
-                setColor();
+                setImage();
                 return;
             }
         }
@@ -42,7 +42,7 @@ namespace Sokoban
                 chestOnTitle = value;
                 if (!chestOnTitle) chestInHole = false;
                 if (chestOnTitle && titleTypeEnum == TitleTypeEnum.Hole) chestInHole = true;
-                setColor();
+                setImage();
                 return;
             }
         }
@@ -68,7 +68,7 @@ namespace Sokoban
             if (titleTypeEnum == TitleTypeEnum.Chest) chestOnTitle = true;
             else chestOnTitle = false;
             
-            setColor();
+            setImage();
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -76,34 +76,51 @@ namespace Sokoban
             base.OnPaint(pe);
         }
 
-        private void setColor()
+        private void setImage()
         {
             if (playerOnTitle)
             {
-                if (playerInHole) this.BackColor = Color.Pink;
-                else this.BackColor = Color.Green;
+                if (playerInHole) 
+                {
+                    this.BackgroundImage = Properties.Resources.Gracz_w_dziurze;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+                else
+                {
+                    this.BackgroundImage = Properties.Resources.Gracz;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                }
             }
             else if (chestOnTitle)
             {
-                if (chestInHole) this.BackColor = Color.Gold;
-                else this.BackColor = Color.Brown;
+                if (chestInHole)
+                {
+                    this.BackgroundImage = Properties.Resources.Skrzynia_w_dziurze;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                }
 
+                else
+                {
+                    this.BackgroundImage = Properties.Resources.Skrzynia;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                }
             }
             else
             {
                 switch (titleTypeEnum)
                 {
                     case TitleTypeEnum.Wall:
-                        this.BackColor = Color.Gray;
+                        this.BackgroundImage = Properties.Resources.Ściana;
                         break;
                     case TitleTypeEnum.Empty:
-                        this.BackColor = Color.White;
+                        this.BackgroundImage = Properties.Resources.Empty;
                         break;
                     case TitleTypeEnum.Hole:
-                        this.BackColor = Color.Black;
+                        this.BackgroundImage = Properties.Resources.Dziura;
+                        this.BackgroundImageLayout = ImageLayout.Stretch;
                         break;
                     default:
-                        this.BackColor = Color.White;
+                        this.BackgroundImage = Properties.Resources.Empty;
                         break;
                 }
             }

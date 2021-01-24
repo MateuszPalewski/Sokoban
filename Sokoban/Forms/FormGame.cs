@@ -92,7 +92,6 @@ namespace Sokoban
                 int temp = map[i].Length;
                 for (int j= 0; j< width; j++)
                 {
-
                     if (j < temp)
                     {
                         switch (char.ToUpper(map[i][j]))
@@ -116,14 +115,9 @@ namespace Sokoban
                             default:
                                 result[i, j] = new CustomPanel(TitleTypeEnum.Empty);
                                 break;
-
-
                         }
                     }
-                   else{
-                        result[i, j] = new CustomPanel(TitleTypeEnum.Wall);
-                        }
-
+                   else result[i, j] = new CustomPanel(TitleTypeEnum.Wall);
                 }
             }
             return result;
@@ -150,9 +144,7 @@ namespace Sokoban
                     tableLayoutPanelGame.Controls.Add(varPanels[i, j], j, i);
 
                 }
-                
             }
-
         }
         
         /// <summary>
@@ -163,10 +155,10 @@ namespace Sokoban
         /// <returns></returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            int panelHeight = panelList.GetLength(0);//pierwszy wymiar oznacza wysokość, a drugi oznacza szerokość  
+            int panelHeight = panelList.GetLength(0);  
             int panelWidth = panelList.GetLength(1);
-            int x = 0,y = 0;
-            for(int i=0; i< panelHeight; i++)
+            int x = 0, y = 0;
+            for(int i=0; i < panelHeight; i++)
             {
                 for (int j=0; j<panelWidth; j++)
                 {
@@ -271,6 +263,7 @@ namespace Sokoban
             }
 
             bool checkWin= true;
+
             for (int i = 0; i < panelHeight; i++)
             {
                 for (int j = 0; j < panelWidth; j++)
@@ -281,21 +274,19 @@ namespace Sokoban
             }
             if (checkWin)
             {
-                MessageBox.Show("Brawo, wygrałeś!", "Zwycięstwo", MessageBoxButtons.OK);
+                MessageBox.Show("Gratulacje, wygrałeś!", "Zwycięstwo", MessageBoxButtons.OK);
                 this.Close();
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
-
         }
 
         /// <summary>
-        /// 
+        /// Reset mapy
         /// </summary>
         private void reset()
         {
             tableLayoutPanelGame.Controls.Clear();
-            
             panelList = loadMap(file);
             initSizeGrid(panelList);
         }

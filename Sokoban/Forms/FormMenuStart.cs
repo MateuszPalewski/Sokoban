@@ -26,7 +26,7 @@ namespace Sokoban
 
 
         /// <summary>
-        /// 
+        /// Uruchomienie gry
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -42,9 +42,6 @@ namespace Sokoban
             {
                 if(comboBoxSelect.Text.Length != 0)
                 {
-
-
-
                     List<string> map = loadMapFromDatabase();
                     Form form = new FormGame(map);
                     form.ShowDialog();
@@ -69,7 +66,7 @@ namespace Sokoban
         }
 
         /// <summary>
-        /// 
+        /// Załadowanie mapy z pliku    
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -80,7 +77,7 @@ namespace Sokoban
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
 
@@ -88,11 +85,11 @@ namespace Sokoban
                 {
                     //Get the path of specified file
                     filename = openFileDialog.FileName;
-
                     string[] tempName = filename.Split('\\');
                     buttonSelectFile.Text = tempName[tempName.Length-1];
                 }
             }
         }
+        
     }
 }
