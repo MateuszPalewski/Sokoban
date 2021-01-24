@@ -16,10 +16,12 @@ namespace Sokoban
         public FormMenuStart()
         {
             InitializeComponent();
-            comboBoxSelect.Items.Add("Ala");
-            comboBoxSelect.Items.Add("Ma");
-            comboBoxSelect.Items.Add("Kota");
-            
+            List<string> ddlValues = loadMapNumberToDDL();
+            foreach (string values in ddlValues)
+            {
+                comboBoxSelect.Items.Add(values);
+            }
+
         }
 
 
@@ -34,15 +36,37 @@ namespace Sokoban
             {
                 Form form = new FormGame(filename);
                 form.ShowDialog();
-                
+
             }
             else
             {
-                Form form = new FormGame("C:\\mapa.txt");
-                form.ShowDialog();
+                if(comboBoxSelect.Text.Length != 0)
+                {
+
+
+
+                    List<string> map = loadMapFromDatabase();
+                    Form form = new FormGame(map);
+                    form.ShowDialog();
+                }
             }
+
         }
 
+        private List<string> loadMapFromDatabase()
+        {
+
+            DBConnection db = new DBConnection();
+            return db.selectMapValues(comboBoxSelect.Text);
+        }
+
+        private List<string> loadMapNumberToDDL()
+        {
+
+            DBConnection db = new DBConnection();
+            return db.selectMapId();
+
+        }
 
         /// <summary>
         /// 

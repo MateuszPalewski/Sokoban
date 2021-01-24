@@ -114,6 +114,7 @@
             this.Controls.Add(this.radioButtonFile);
             this.Controls.Add(this.comboBoxSelect);
             this.Name = "FormMenuStart";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormStart";
             this.ResumeLayout(false);
             this.PerformLayout();
